@@ -5,17 +5,17 @@ To implement the Rat in a Maze problem using backtracking and find all possible 
 
 
 ## Algorithm
-1. Initialize a 4×4 maze as a 2D list, where `1` indicates a valid path and `0` indicates a blocked cell.  
-2. Define a helper function `isSafe` that checks whether the current cell `(x, y)` is within bounds and open (`maze[x][y] == 1`).  
-3. Create a solution matrix `sol` initialized with all zeros to store the path taken by the rat.  
-4. Start from the top-left cell `(0, 0)` and use a recursive function `solveMazeUtil` to explore the path.  
-5. In `solveMazeUtil`, if the destination `(N-1, N-1)` is reached, mark it as part of the solution path and return `True`.  
-6. If the current cell `(x, y)` is safe, mark it as part of the path in `sol[x][y] = 1`.  
-7. Move forward recursively in the maze: first try moving down (`x + 1`) and then right (`y + 1`).  
-8. If moving in both directions fails, backtrack by marking `sol[x][y] = 0` and return `False`.  
-9. In the main function `solveMaze`, print the solution matrix if a path is found; otherwise, print that no solution exists.  
-10. Call the `solveMaze` function with the initialized maze to start the process.
-
+1. **Initialize Maze**: Create a 2D array `maze[N][N]` with open paths (`1`) and blocked paths (`0`).
+2. **Initialize Solution Matrix**: Create a 2D array `sol[N][N]` to store the solution, initialized to `0`.
+3. **Define `isSafe(x, y)`**: Check if the position `(x, y)` is within bounds and open.
+4. **Define `solveMaze()`**: Initialize the solution matrix and call `solveMazeUtil()` to start solving.
+5. **Define `solveMazeUtil(x, y)`**: Recursively try to find a path from `(x, y)` to `(N-1, N-1)`.
+6. **Base Case**: If `(x, y)` is the destination, mark `sol[x][y] = 1` and return `True`.
+7. **Check Safety**: If `(x, y)` is safe, mark it as part of the solution (`sol[x][y] = 1`).
+8. **Move Right**: Recursively try to move right by calling `solveMazeUtil(x, y+1)`.
+9. **Move Down**: If right is blocked, recursively try to move down by calling `solveMazeUtil(x+1, y)`.
+10. **Backtrack**: If both right and down are blocked, backtrack by setting `sol[x][y] = 0` and return `False`.
+11. 
 ## Program:
 ```python
 Program to implement Rat in a Maze.
