@@ -16,7 +16,7 @@ To demonstrate that the sum of the subset of a given set is equal to the given s
 9. Call the `subsetSum` function with the input values to find and display all matching subsets.  
 
 ## Program:
-```
+```python
 Program to implement Subset sum problem.
 Developed by: THIRISHA S
 Register Number:  212222231060
