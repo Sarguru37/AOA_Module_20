@@ -15,7 +15,8 @@ To implement the Rat in a Maze problem using backtracking and find all possible 
 8. **Move Right**: Recursively try to move right by calling `solveMazeUtil(x, y+1)`.
 9. **Move Down**: If right is blocked, recursively try to move down by calling `solveMazeUtil(x+1, y)`.
 10. **Backtrack**: If both right and down are blocked, backtrack by setting `sol[x][y] = 0` and return `False`.
-11. 
+
+ 
 ## Program:
 ```python
 Program to implement Rat in a Maze.
